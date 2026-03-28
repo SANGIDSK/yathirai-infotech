@@ -1,0 +1,382 @@
+.about { width: 100%; }
+
+/* Header */
+.about__header {
+  position: relative;
+  padding: 80px 24px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about__header-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(106,13,173,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about__tag {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #bf5fff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* Mission */
+.about__mission { padding: 40px 24px 80px; }
+
+.about__mission-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about__mission-visual {
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.about__mission-icon {
+  font-size: 3rem;
+  animation: shield-float 4s ease-in-out infinite;
+}
+
+@keyframes shield-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.about__mission-visual h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #bf5fff, #dd55ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about__mission-visual p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+
+.about__mission-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(159,63,255,0.2);
+  width: 100%;
+  justify-content: center;
+}
+
+.about__mission-stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.about__mission-stats strong {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  color: #bf5fff;
+  font-weight: 700;
+}
+
+.about__mission-stats span {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about__mission-text { display: flex; flex-direction: column; gap: 16px; }
+
+.about__mission-text p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.about__mission-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.about__value-chip {
+  padding: 6px 16px;
+  background: rgba(159,63,255,0.15);
+  border: 1px solid rgba(159,63,255,0.3);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #bf5fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Gallery */
+.about__gallery {
+  padding: 60px 24px 80px;
+  background: rgba(30,0,60,0.3);
+}
+
+.about__gallery-inner { max-width: 900px; margin: 0 auto; }
+
+.about__carousel {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: rgba(30,0,60,0.6);
+  border: 1px solid rgba(159,63,255,0.3);
+}
+
+.about__carousel-track { position: relative; width: 100%; height: 100%; }
+
+.about__carousel-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about__carousel-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.about__carousel-slide.next {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
+.about__carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__img-placeholder {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.about__img-placeholder span { font-size: 4rem; opacity: 0.3; }
+.about__img-placeholder p { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; letter-spacing: 2px; }
+.about__img-placeholder small { font-size: 0.75rem; font-family: 'Share Tech Mono', monospace; }
+
+.about__carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 20px;
+  background: linear-gradient(transparent, rgba(10,0,18,0.9));
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  z-index: 3;
+}
+
+.about__carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(45,0,96,0.8);
+  border: 1px solid rgba(159,63,255,0.4);
+  border-radius: 50%;
+  color: #bf5fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.about__carousel-btn:hover {
+  background: rgba(159,63,255,0.3);
+  box-shadow: 0 0 20px rgba(159,63,255,0.4);
+}
+
+.about__carousel-btn--prev { left: 16px; }
+.about__carousel-btn--next { right: 16px; }
+
+.about__carousel-dots {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.about__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.about__dot.active {
+  background: #bf5fff;
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(159,63,255,0.8);
+}
+
+/* Timeline */
+.about__timeline { padding: 60px 24px 80px; }
+.about__timeline-inner { max-width: 700px; margin: 0 auto; }
+
+.about__timeline-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.about__timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(159,63,255,0.5), transparent);
+  transform: translateX(-50%);
+}
+
+.about__milestone {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  max-width: 46%;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.about__milestone.left { align-self: flex-start; margin-right: auto; }
+.about__milestone.right { align-self: flex-end; margin-left: auto; flex-direction: row-reverse; }
+
+.about__milestone-icon { font-size: 1.8rem; flex-shrink: 0; }
+
+.about__milestone-content strong {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  color: #bf5fff;
+  display: block;
+  font-weight: 700;
+}
+
+.about__milestone-content p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+/* Team */
+.about__team {
+  padding: 60px 24px 80px;
+  background: rgba(30,0,60,0.3);
+}
+
+.about__team-inner { max-width: 1000px; margin: 0 auto; }
+
+.about__team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about__team-card {
+  padding: 36px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.about__team-avatar {
+  font-size: 3rem;
+  width: 80px; height: 80px;
+  background: rgba(45,0,96,0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(159,63,255,0.3);
+  margin-bottom: 8px;
+}
+
+.about__team-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.about__team-role {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #bf5fff;
+  text-transform: uppercase;
+}
+
+.about__team-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about__mission-inner { grid-template-columns: 1fr; }
+  .about__mission-visual { order: -1; }
+  .about__team-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .about__milestone { max-width: 80%; }
+  .about__milestone.right { margin-left: 0; flex-direction: row; }
+  .about__timeline-line { display: none; }
+}
+
+@media (max-width: 480px) {
+  .about__milestone { max-width: 100%; }
+}
